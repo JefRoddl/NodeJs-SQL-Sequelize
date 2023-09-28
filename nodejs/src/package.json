@@ -1,0 +1,25 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "Estudos iniciais de nodejs",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js --delay 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Estudos",
+    "de",
+    "Nodejs"
+  ],
+  "author": "Jeferson Rodrigues",
+  "license": "ISC",
+  "dependencies": {
+    "console-log-hello-world": "^1.0.3",
+    "express": "^4.18.2",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
