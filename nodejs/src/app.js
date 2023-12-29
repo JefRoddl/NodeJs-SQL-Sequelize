@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const app = express()
 const port = 3000
+const fornecedores = require('./routes/fornecedores')
 const home = require('./routes/home')
 const client = require('./routes/client')
 const bodyParser = require('body-parser')
@@ -18,8 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use('/', home)
 app.use('/client', client)
-
-
+app.use('/fornecedores', fornecedores)
 
 
 

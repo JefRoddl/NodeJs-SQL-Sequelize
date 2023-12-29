@@ -20,6 +20,7 @@ router.get('/requests/:name', (req, res) => {
     console.log(req.params.name)
 })
 
+
 router.post('/body', (req, res) => {
     res.json(req.body.lastname)
 })
@@ -32,6 +33,14 @@ router.get('/response', (req, res) => {
     res.render("index", {
         title: "Page Title"
     })
+})
+
+router.get('/fornecedores', (req, res) => {
+    res.render('fornecedores_new')
+})
+
+router.get('/fornecedores/list', (req, res) => {
+    res.render('fornecedores_list')
 })
 
 module.exports = router;
