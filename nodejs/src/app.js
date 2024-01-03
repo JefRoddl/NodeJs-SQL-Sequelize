@@ -15,7 +15,7 @@ app.use('/assets', express.static('./assets'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-
+require('./model/index')
 
 app.use('/', home)
 app.use('/client', client)
