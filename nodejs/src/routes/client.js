@@ -11,7 +11,7 @@ router.get('/new', (req, res) => {
     res.render('client_new')
 })
 
-router.post('/post', create)
+router.post('/new', create)
 
 
 module.exports = router;

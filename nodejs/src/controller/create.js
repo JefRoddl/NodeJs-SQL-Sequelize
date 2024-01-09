@@ -1,5 +1,5 @@
 let sequelize = require('./../model/index')
-let Cliente = sequelize.define('./../model/client')
+let Cliente = sequelize.import('./../model/client')
 
 module.exports = (req, res) => {
     Cliente
