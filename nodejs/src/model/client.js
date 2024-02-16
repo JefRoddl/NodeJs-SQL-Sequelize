@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
         cliente:DataTypes.STRING,
         cnpj: DataTypes.STRING,
         telefone:DataTypes.STRING,
-        email: DataTypes.STRING
+        email: DataTypes.STRING,
+        contato:DataTypes.STRING
     }, {
         timesstamps: false
     })
