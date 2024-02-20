@@ -35,12 +35,8 @@ router.get('/response', (req, res) => {
     })
 })
 
-router.get('/fornecedores', (req, res) => {
-    res.render('fornecedores_new')
-})
 
-router.get('/fornecedores/list', (req, res) => {
-    res.render('fornecedores_list')
-})
+
+
 
 module.exports = router;
