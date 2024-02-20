@@ -3,6 +3,7 @@ let router = express.Router()
 let create = require('../controllerFornecedores/createFornecedor')
 let find = require('../controllerFornecedores/findFornecedor')
 let remove = require('../controllerFornecedores/removeFornecedor')
+let update = require('../controllerFornecedores/updateFornecedores')
 
 router.get('/', find)
 
@@ -13,6 +14,8 @@ router.get('/fornecedores', (req, res) => {
 router.post('/', create)
 
 router.delete('/:id', remove)
+
+router.put('/:id', update)
 
 
 
