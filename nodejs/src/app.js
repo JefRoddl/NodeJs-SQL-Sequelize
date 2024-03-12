@@ -5,6 +5,7 @@ const port = 3000
 const fornecedores = require('./routes/fornecedores')
 const home = require('./routes/home')
 const client = require('./routes/client')
+const methodOverride = require('method-override')
 const bodyParser = require('body-parser')
 
 app.set('view engine', 'pug')
@@ -14,6 +15,7 @@ app.use('/assets', express.static('./assets'))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(methodOverride("_method"))
 
 require('./model/index')
 
