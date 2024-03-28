@@ -1,46 +1,37 @@
 extends ./main
 
-block content 
+block content
     div.container
         h2 #{title}
-        if msg == 1
-            div.alert.alert-success Cliente cadastrado com Sucesso! 
-        if msg == 2
-            div.alert.alert-danger Não foi possível cadastrar o Cliente
-        if msg == 3
-            div.alert.alert-success Cliente Alterado cadastrado com Sucesso! 
-        if msg == 4
-            div.alert.alert-danger Não foi possível alterar o Cliente!
-        if msg == 5
-            div.alert.alert-danger Cliente removido com sucesso!
-        if msg == 6
-            div.alert.alert-danger Não foi possivel remover o cliente!
 
-        table.table.table-bordered 
-            thead 
-                tr 
-                    th Nome 
-                    th Cnpj 
-                    th Telefone 
-                    th Email 
-                    th Contato 
-                    th Ações 
-            tbody 
+        if flash && flash.message
+            div(class=`alert alert-${flash.type}`) #{flash.message}
+
+        table.table.table-bordered
+            thead
+                tr
+                    th Nome
+                    th Cnpj
+                    th Telefone
+                    th E-mail
+                    th Contato
+                    th Ações
+            tbody
                 each client in clients
-                    tr 
-                        td= client.cliente 
-                        td= client.cnpj 
-                        td= client.telefone 
-                        td= client.email 
+                    tr  
+                        td= client.cliente
+                        td= client.cnpj
+                        td= client.telefone
+                        td= client.email
                         td= client.contato
                         td 
-                            a(href="/client/edit/" + client.id, class="btn btn-info") Editar 
+                            a(href="/client/edit/" + client.id, class="btn btn-info") Editar
                             form(
                                 id="formClient"
-                                method="POST",
-                                action="/client/" + client.id + "/?_method=DELETE",
-                                style="display:inline-block")
+                                method="POST" 
+                                action="/client/" + client.id + "/?_method=DELETE", 
+                                style="display:inline-block;")                                
                                 button.btn.btn-danger.ml-1(
-                                    type="submit",
+                                    type="submit", 
                                     onclick="event.preventDefault();if(confirm('Você deseja realmente deletar este cliente?')){document.getElementById('formClient').submit();}") Delete
                 
